@@ -2,12 +2,13 @@ import React from 'react'
 import Image from 'next/image'
 import { TypeAnimation } from 'react-type-animation';
 import { AiFillFacebook,AiOutlineInstagram,AiFillLinkedin,AiFillGithub } from 'react-icons/ai';
+import Icon from './Icon';
 
 function ProfileBox() {
   return (
     <div className = "w-120 border-slate-100 flex flex-col justify-center place-items-center h-screen font-bold">
         <div>
-            <Image src = "/me.png" width = {200} height = {200} className = "rounded-[50%]"/>
+            <Icon size={200}/>
         </div>
         <div className = "">
             <div className = "flex flex-row text-slate-200 text-[40px] mt-5 justify-center">
@@ -39,16 +40,16 @@ function ProfileBox() {
             <div className = "w-full flex justify-center">
                 <div className = "flow-root grid grid-flow-col w-64 place-items-center mt-8 h-20">
                     <div className = "ml-3 w-[4rem] h-[4rem] bg-[#0f172a] flex justify-center items-center">
-                        <AiFillGithub className = "text-3xl text-slate-200"/>
+                        <AiFillGithub className = "text-3xl text-slate-200 cursor-pointer"/>
                     </div>
                     <div className = "ml-3 w-[4rem] h-[4rem] bg-[#0f172a] flex justify-center items-center">
-                        <AiFillFacebook className = "text-3xl text-slate-200"/>
+                        <AiFillFacebook className = "text-3xl text-slate-200 cursor-pointer"/>
                     </div>
                     <div className = "ml-3 w-[4rem] h-[4rem] bg-[#0f172a] flex justify-center items-center">
-                        <AiOutlineInstagram className = "text-3xl text-slate-200"/>
+                        <AiOutlineInstagram className = "text-3xl text-slate-200 cursor-pointer"/>
                     </div>
                     <div className = "ml-3 w-[4rem] h-[4rem] bg-[#0f172a] flex justify-center items-center">
-                        <AiFillLinkedin className = "text-3xl text-slate-200"/>
+                        <AiFillLinkedin className = "text-3xl text-slate-200 cursor-pointer"/>
                     </div>
                 </div>
             </div>
