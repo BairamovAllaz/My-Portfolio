@@ -14,14 +14,11 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
             <main className={styles.backgrounddiv}>
-                <div className = "flex">
-                    <div className="w-1/5">
+                <div className = "flex w-screen">
+                    <div className="">
                         <Bar/>
                     </div>
-                    <div className="h-screen w-4/5 flex justify-center items-center">
-                        {
-                            //TODO FIX ALIGMENT
-                        }
+                    <div className="h-screen grow flex justify-center items-center ml-auto">
                         <ProfileBox/>
                     </div>
                 </div>

@@ -6,7 +6,7 @@ import Icon from './Icon';
 
 function ProfileBox() {
   return (
-    <div className = "w-120 border-slate-100 flex flex-col justify-center place-items-center h-screen font-bold">
+          <div className = "border-slate-100 flex flex-col justify-center place-items-center h-screen font-bold">
         <div>
             <Icon size={200}/>
         </div>
