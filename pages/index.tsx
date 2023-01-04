@@ -1,10 +1,19 @@
+import React from 'react'
 import Head from 'next/head'
 import styles from './index.module.css';
 import Card from '../components/Card.tsx';
 import ProfileBox from '../components/ProfileBox';
 import Bar from "../components/Bar";
+import Navigation from '../components/Navigation'
 
 export default function Home() {
+    const [isNavigationOpen,setIsNavigationOpen] = React.useState(false);
+
+    function handleIsNavigationOpen(event)
+    {
+        setIsNavigationOpen(event);
+    }
+
     return (
         <>
             <Head>
@@ -16,10 +25,16 @@ export default function Home() {
             <main className={styles.backgrounddiv}>
                 <div className = "flex w-screen">
                     <div className="">
-                        <Bar/>
+                        <Bar handleIsNavigationOpen = {handleIsNavigationOpen} IsNavigationOpen = {isNavigationOpen}/>
                     </div>
                     <div className="h-screen grow flex justify-center items-center ml-auto">
-                        <ProfileBox/>
+                        {
+                            isNavigationOpen ? (
+                                    <Navigation/>
+                            ) : (
+                                    <ProfileBox/>
+                            )
+                        }
                     </div>
                 </div>
             </main>

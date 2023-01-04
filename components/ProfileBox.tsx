@@ -8,7 +8,7 @@ function ProfileBox() {
   return (
           <div className = "border-slate-100 flex flex-col justify-center place-items-center h-screen font-bold">
         <div>
-            <Icon size={200}/>
+            <Icon size={150}/>
         </div>
         <div className = "">
             <div className = "flex flex-row text-slate-200 text-[40px] mt-5 justify-center">
