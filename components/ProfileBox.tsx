@@ -1,8 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
 import { TypeAnimation } from 'react-type-animation';
-import { AiFillFacebook,AiOutlineInstagram,AiFillLinkedin,AiFillGithub } from 'react-icons/ai';
 import Icon from './Icon';
+import Links from './Links'
 
 function ProfileBox() {
   return (
@@ -21,11 +21,11 @@ function ProfileBox() {
                             'Software Enginner',
                             2000,
                             'Javascript Developer',
-                            4000,
+                            2000,
                             '.NET Developer',
-                            6000,
+                            2000,
                             'Backend Developer',
-                            8000,
+                            2000,
                             'Student'
                         ]}
                         wrapper="p"
@@ -37,22 +37,7 @@ function ProfileBox() {
                 I am a frontend web developer. I can provide clean code and pixel perfect design. 
                 I also make website more & more interactive with web animations.
             </p>
-            <div className = "w-full flex justify-center">
-                <div className = "flow-root grid grid-flow-col w-64 place-items-center mt-8 h-20">
-                    <div className = "ml-3 w-[4rem] h-[4rem] bg-[#0f172a] flex justify-center items-center">
-                        <AiFillGithub className = "text-3xl text-slate-200 cursor-pointer"/>
-                    </div>
-                    <div className = "ml-3 w-[4rem] h-[4rem] bg-[#0f172a] flex justify-center items-center">
-                        <AiFillFacebook className = "text-3xl text-slate-200 cursor-pointer"/>
-                    </div>
-                    <div className = "ml-3 w-[4rem] h-[4rem] bg-[#0f172a] flex justify-center items-center">
-                        <AiOutlineInstagram className = "text-3xl text-slate-200 cursor-pointer"/>
-                    </div>
-                    <div className = "ml-3 w-[4rem] h-[4rem] bg-[#0f172a] flex justify-center items-center">
-                        <AiFillLinkedin className = "text-3xl text-slate-200 cursor-pointer"/>
-                    </div>
-                </div>
-            </div>
+            <Links/>
         </div>
     </div>
   )
