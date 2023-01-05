@@ -16,6 +16,9 @@ export default function Layout({ children }) {
                         React.cloneElement(child, { IsNavigationOpen : isNavigationOpen })
                     )}
                 </main>
+            {
+                //FIX SCREEN ISSUE
+            }
             </>
             )
 }
