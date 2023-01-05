@@ -6,14 +6,10 @@ import ProfileBox from '../components/ProfileBox';
 import Bar from "../components/Bar";
 import Navigation from '../components/Navigation'
 
-export default function Home() {
-    const [isNavigationOpen,setIsNavigationOpen] = React.useState(false);
-
-    function handleIsNavigationOpen(event)
-    {
-        setIsNavigationOpen(event);
-    }
-
+export default function Home(props) {
+    React.useEffect(() => {
+        console.log(props.IsNavigationOpen)
+    },[])
     return (
         <>
             <Head>
@@ -22,19 +18,10 @@ export default function Home() {
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
-            <main className={styles.backgrounddiv}>
+            <main className="w-full bg-slate-500">
                 <div className = "flex w-screen">
-                    <div className="">
-                        <Bar handleIsNavigationOpen = {handleIsNavigationOpen} IsNavigationOpen = {isNavigationOpen}/>
-                    </div>
                     <div className="h-screen grow flex justify-center items-center ml-auto">
-                        {
-                            isNavigationOpen ? (
-                                    <Navigation/>
-                            ) : (
-                                    <ProfileBox/>
-                            )
-                        }
+                            <ProfileBox/>
                     </div>
                 </div>
             </main>
