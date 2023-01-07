@@ -1,5 +1,8 @@
 import React from 'react'
 import Icon from "./Icon";
+import { useSelector, useDispatch } from 'react-redux'
+import { decrement, increment } from '../slices/stateSlice'
+
 import {AiOutlineMenu,AiOutlineCloseCircle} from 'react-icons/ai'
 
 interface props {
