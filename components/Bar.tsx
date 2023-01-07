@@ -14,7 +14,7 @@ function Bar(props : props) {
     }
 
     return (
-            <div className="w-24 bg-slate-300 h-screen bg-[#0B1223] border-r-2 border-x-slate-200">
+            <div className="bg-slate-300 h-screen bg-[#0B1223] border-r-2 border-x-slate-200">
                 <div className = "w-full flex justify-center pt-4 h-1/6">
                 <Icon size = {60}/>
             </div>

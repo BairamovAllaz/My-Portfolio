@@ -1,3 +1,5 @@
+import { TypeAnimation } from 'react-type-animation';
+
 function AutoText()
 { 
     return(

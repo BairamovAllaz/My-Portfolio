@@ -10,15 +10,18 @@ export default function Layout({ children }) {
 
     return (
             <>
-                <Bar handleIsNavigationOpen = {handleIsNavigationOpen} IsNavigationOpen = {isNavigationOpen}/>
-                <main>
-                    {React.Children.map(children, (child) =>
-                        React.cloneElement(child, { IsNavigationOpen : isNavigationOpen })
-                    )}
-                </main>
-            {
-                //FIX SCREEN ISSUE
-            }
+            <div className = "flex">
+                <div className = "w-[5%]">
+                    <Bar handleIsNavigationOpen = {handleIsNavigationOpen} IsNavigationOpen = {isNavigationOpen}/>
+                </div>
+                <div className = "w-[95%]">
+                    <main>
+                        {React.Children.map(children, (child) =>
+                            React.cloneElement(child, { IsNavigationOpen : isNavigationOpen })
+                        )}
+                    </main>
+                </div>
+            </div>
             </>
             )
 }

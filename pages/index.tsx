@@ -7,9 +7,6 @@ import Bar from "../components/Bar";
 import Navigation from '../components/Navigation'
 
 export default function Home(props) {
-    React.useEffect(() => {
-        console.log(props.IsNavigationOpen)
-    },[])
     return (
         <>
             <Head>
@@ -18,12 +15,10 @@ export default function Home(props) {
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
-            <main className="w-full bg-slate-500">
-                <div className = "flex w-screen">
+            <main className="w-full bg-[#0B1223]">
                     <div className="h-screen grow flex justify-center items-center ml-auto">
                             <ProfileBox/>
                     </div>
-                </div>
             </main>
         </>
     )
