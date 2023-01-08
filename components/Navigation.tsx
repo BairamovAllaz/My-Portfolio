@@ -1,10 +1,14 @@
 import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import type { RootState } from '../store'
+import {toogleisNavigationOpen} from "../slices/stateSlice";
 import {useRouter} from 'next/router'
 function Navigation() {
     const router = useRouter();
-
+    const dispatch = useDispatch();
     function redirect(path : string) : void
     {
+        dispatch(toogleisNavigationOpen());
         router.push(path);
     }
 
@@ -12,7 +16,7 @@ function Navigation() {
             <div className = "w-full h-full bg-[#0F172A] flex justify-center text-center cursor-pointer">
                 <div
                     className = "w-1/6 h-full flex items-center justify-center border-gray-200 border-2 hover:w-2/6 duration-700 text-6xl font-black"
-                    onClick = {() => redirect("/home")}
+                    onClick = {() => redirect("/")}
                     >
                     <p className = "text-[#72E2AE]">0.1</p>
                     <h1 className = "text-[#FAFAFA]">Home</h1>

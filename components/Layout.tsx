@@ -18,7 +18,9 @@ export default function Layout({ children }) {
                             isNavigationOpen ? (
                                 <div>{children}</div>
                             ) : (
-                                <Navigation/>
+                                <div className="h-screen">
+                                    <Navigation/>
+                                </div>
                             )
                         }
                     </main>

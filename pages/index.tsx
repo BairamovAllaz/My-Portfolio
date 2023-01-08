@@ -11,8 +11,8 @@ export default function Home() {
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
-            <main className="w-full bg-[#0B1223]">
-                    <div className="h-screen grow flex justify-center items-center ml-auto">
+            <main className="w-full h-full bg-[#0B1223]">
+                    <div className="h-full grow flex justify-center items-center ml-auto">
                             <ProfileBox/>
                     </div>
             </main>
