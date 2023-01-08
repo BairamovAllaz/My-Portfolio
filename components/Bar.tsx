@@ -7,7 +7,6 @@ import { useSelector, useDispatch } from 'react-redux'
 import { toogleisNavigationOpen } from '../slices/stateSlice'
 import type { RootState } from '../store'
 
-
 function Bar() {
     const isNavigationOpen = useSelector((state: RootState) => state.state.isNavigationOpen);
     const dispatch = useDispatch();
