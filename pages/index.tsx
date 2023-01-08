@@ -1,12 +1,8 @@
 import React from 'react'
 import Head from 'next/head'
-import styles from './index.module.css';
-import Card from '../components/Card.tsx';
 import ProfileBox from '../components/ProfileBox';
-import Bar from "../components/Bar";
-import Navigation from '../components/Navigation'
 
-export default function Home(props) {
+export default function Home() {
     return (
         <>
             <Head>

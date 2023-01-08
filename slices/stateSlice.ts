@@ -1,31 +1,25 @@
-import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
+import type { PayloadAction } from "@reduxjs/toolkit";
 
 export interface CounterState {
-  value: number
+  isNavigationOpen: boolean;
 }
 
 const initialState: CounterState = {
-  value: 0,
-}
+  isNavigationOpen: false,
+};
 
 export const stateSlice = createSlice({
-  name: 'counter',
+  name: "counter",
   initialState,
   reducers: {
-    increment: (state) => {
-      state.value += 1
-    },
-    decrement: (state) => {
-      state.value -= 1
-    },
-    incrementByAmount: (state, action: PayloadAction<number>) => {
-      state.value += action.payload
+    toogleisNavigationOpen: state => {
+      state.isNavigationOpen = !state.isNavigationOpen;
     },
   },
-})
+});
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount } = stateSlice.actions
+export const { toogleisNavigationOpen } = stateSlice.actions;
 
-export default stateSlice.reducer
+export default stateSlice.reducer;

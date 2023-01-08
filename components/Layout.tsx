@@ -1,24 +1,26 @@
 import Bar from './Bar'
 import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import type { RootState } from '../store'
+import Navigation from "./Navigation";
+
 export default function Layout({ children }) {
-    const [isNavigationOpen,setIsNavigationOpen] = React.useState(false);
-
-    function handleIsNavigationOpen(event)
-    {
-        setIsNavigationOpen(event);
-    }
-
+    const isNavigationOpen = useSelector((state: RootState) => state.state.isNavigationOpen);
     return (
             <>
             <div className = "flex">
                 <div className = "w-[5%]">
-                    <Bar handleIsNavigationOpen = {handleIsNavigationOpen} IsNavigationOpen = {isNavigationOpen}/>
+                    <Bar/>
                 </div>
                 <div className = "w-[95%]">
                     <main>
-                        {React.Children.map(children, (child) =>
-                            React.cloneElement(child, { IsNavigationOpen : isNavigationOpen })
-                        )}
+                        {
+                            isNavigationOpen ? (
+                                <div>{children}</div>
+                            ) : (
+                                <Navigation/>
+                            )
+                        }
                     </main>
                 </div>
             </div>

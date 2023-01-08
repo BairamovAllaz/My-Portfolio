@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import stateSlic from './slices/stateSlice'
+import stateSlice from './slices/stateSlice'
 
 export const store = configureStore({
   reducer: {

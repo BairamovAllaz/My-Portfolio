@@ -1,20 +1,16 @@
 import React from 'react'
 import Icon from "./Icon";
-import { useSelector, useDispatch } from 'react-redux'
-import { decrement, increment } from '../slices/stateSlice'
 
 import {AiOutlineMenu,AiOutlineCloseCircle} from 'react-icons/ai'
 
-interface props {
-    handleIsNavigationOpen : (event) => void,
-    IsNavigationOpen : boolean
-}
+import { useSelector, useDispatch } from 'react-redux'
+import { toogleisNavigationOpen } from '../slices/stateSlice'
+import type { RootState } from '../store'
 
-function Bar(props : props) {
-    function handleClick()
-    {
-        props.handleIsNavigationOpen(!props.IsNavigationOpen);
-    }
+
+function Bar() {
+    const isNavigationOpen = useSelector((state: RootState) => state.state.isNavigationOpen);
+    const dispatch = useDispatch();
 
     return (
             <div className="bg-slate-300 h-screen bg-[#0B1223] border-r-2 border-x-slate-200">
@@ -23,10 +19,10 @@ function Bar(props : props) {
             </div>
             <div className = "w-full flex justify-center items-center h-5/6">
                 {
-                    !props.IsNavigationOpen ? (
-                        <AiOutlineMenu className = "text-4xl text-slate-200 cursor-pointer" onClick = {handleClick}/>
+                    isNavigationOpen ? (
+                        <AiOutlineMenu className = "text-4xl text-slate-200 cursor-pointer" onClick = {() => dispatch(toogleisNavigationOpen())}/>
                     ) : (
-                            <AiOutlineCloseCircle className = "text-4xl text-slate-200 cursor-pointer" onClick = {handleClick}/>
+                            <AiOutlineCloseCircle className = "text-4xl text-slate-200 cursor-pointer" onClick = {() => dispatch(toogleisNavigationOpen())}/>
                     )
                 }
             </div>
