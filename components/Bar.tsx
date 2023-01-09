@@ -12,7 +12,7 @@ function Bar() {
     const dispatch = useDispatch();
 
     return (
-            <div className="bg-slate-300 h-screen bg-[#0F172A] border-r-2 border-x-slate-200">
+            <div className="bg-slate-300 h-full bg-[#0F172A] border-r-2 border-x-slate-200">
                 <div className = "w-full flex justify-center pt-4 h-1/6">
                 <Icon size = {60}/>
             </div>

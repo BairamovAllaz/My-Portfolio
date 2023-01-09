@@ -16,7 +16,7 @@ export default function Layout({ children }) {
                     <main>
                         {
                             isNavigationOpen ? (
-                                <div>{children}</div>
+                                <div className="w-full h-full bg-[#0B1223]">{children}</div>
                             ) : (
                                 <div className="h-screen">
                                     <Navigation/>
