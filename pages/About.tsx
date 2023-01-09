@@ -1,8 +1,11 @@
 import React from 'react'
+import {MdDeveloperMode} from 'react-icons/md'
+import {SiFrontendmentor,SiDotnet} from 'react-icons/si'
 import Head from 'next/head'
 import AboutImage from "../components/AboutImage";
 import AboutInfo from "../components/AboutInfo";
 import ServiceBox from "../components/ServiceBox";
+
 
 function About()
 {
@@ -33,10 +36,10 @@ function About()
                             MY SERVICES
                         </h1>
                     </div>
-                    <div className="flex space-x-4 mt-3 mb-12">
-                        <ServiceBox/>
-                        <ServiceBox/>
-                        <ServiceBox/>
+                    <div className="flex space-x-4 mt-12 mb-12">
+                        <ServiceBox icon={MdDeveloperMode} title="Backend Development" about="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Augue diam etiam venenatis mi tristique amet cras diam etiam."/>
+                        <ServiceBox icon={SiFrontendmentor} title="FrontEnd Development" about="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Augue diam etiam venenatis mi tristique amet cras diam etiam."/>
+                        <ServiceBox icon={SiDotnet} title=".NET Development" about="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Augue diam etiam venenatis mi tristique amet cras diam etiam."/>
                     </div>
                 </div>
             </div>
