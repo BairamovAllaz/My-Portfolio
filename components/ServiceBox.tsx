@@ -10,7 +10,7 @@ interface props{
 function ServiceBox(props:props)
 {
     return(
-        <div className="w-2/6 h-full bg-slate-300 bg-[#162033]">
+        <div className="w-2/6 h-full bg-slate-300 bg-[#162033] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-90  duration-300 cursor-pointer">
             <div className= "flex">
                 <div className = "w-24 h-24 bg-slate-800 flex justify-center items-center m-3 rounded-full">
                     <props.icon className="text-5xl text-[#72e2ae]"/>
