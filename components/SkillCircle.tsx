@@ -6,7 +6,6 @@ export interface props{
 
 function SkillCircle(props : props)
 {
-
     React.useLayoutEffect(() => {
         document.documentElement.style.setProperty('--ratio',props.ration);
         console.log(props.ration)
