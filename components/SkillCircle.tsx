@@ -1,42 +1,52 @@
 import React from 'react'
 
-export interface props{
-    ration : any
+export interface props {
+    ration: any;
+    percentText:number;
+    title:string
 }
 
-function SkillCircle(props : props)
-{
-    React.useLayoutEffect(() => {
-        document.documentElement.style.setProperty('--ratio',props.ration);
-        console.log(props.ration)
-    },[])
-
-    return(
-        <div className = "flex justify-center items-center">
-            <div className="
-             h-[150px] w-[150px]
-             rounded-[50%]
-             relative
-             .clip-path-style
-             before:content-['']
-             before:relative
-             before:w-full
-             before:h-full
-             before:top-[0]
-             before:left-[0]
-             before:bg-[conic-gradient(red 0 calc(0.3 * 360deg), lime calc(0.3 * 360deg) 360deg)]
-             before:z-[-2]
-             after:content-['']
-             after:relative
-             after:w-[80%]
-             after:h-[80%]
-             after:top-[10%]
-             after:left-[10%]
-             after:bg-slate-200
-             after:rounded-[50%]
-             after:z-[-1]
-             "></div>
+function SkillCircle(props: props) {
+    return (
+        /*
+           refactor styling percentage border
+        **/
+        <div className="flex justify-center items-center mt-4">
+            <div
+                className="
+                    relative
+                    text-center
+                    w-[120px]
+                    h-[120px]
+                    rounded-full
+                    "
+                style={{background: `linear-gradient(${props.ration}deg, #72E2AE 50%, transparent 50%), linear-gradient(0deg, #72E2AE 50%, lightgray 50%)`}}>
+                <div className="
+                relative
+                top-[10px]
+                left-[10px]
+                text-center
+                w-[100px]
+                h-[100px]
+                rounded-full
+                bg-[#162033]
+                flex
+                justify-center
+                items-center
+                text-slate-200
+                font-bold
+                text-2xl
+                ">
+                    <div>
+                        %{props.percentText}
+                    </div>
+                </div>
+                <div className="m-6 text-slate-200 font-bold pt-5 text-center">
+                    {props.title}
+                </div>
+            </div>
         </div>
     )
 }
+
 export default SkillCircle;

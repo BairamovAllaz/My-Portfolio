@@ -5,4 +5,7 @@
     .clip-path-style {
         clip-path: circle(50%);
     }
+    .bg-image{
+        background: linear-gradient(270deg, black 50%, transparent 50%), linear-gradient(0deg, black 50%, lightgray 50%);
+    }
 }

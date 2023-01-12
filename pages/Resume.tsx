@@ -1,6 +1,7 @@
 import React from 'react'
 import Head from "next/head";
 import ResumeBox from "../components/ResumeBox";
+import SkillBox from "../components/SkillBox";
 
 function Resume() {
     return (
@@ -16,11 +17,19 @@ function Resume() {
                     <div className="text-center text-slate-100 font-bold text-4xl">
                         <h1>MY SKILLS</h1>
                     </div>
-                    <div className = "flex w-auto min-h-full">
-                        <ResumeBox ration={0.3}/>
-                        <ResumeBox ration={0.5}/>
-                        <ResumeBox ration={4}/>
-                        <ResumeBox ration={0.7}/>
+                    <div className = "flex w-auto ">
+                        <ResumeBox ration={90} percentText={85} title="UI/UX DESIGN"/>
+                        <ResumeBox ration={150} percentText={80} title="Backend Development"/>
+                        <ResumeBox ration={360} percentText={95} title="FrontEnd Development"/>
+                        <ResumeBox ration={150} percentText={75} title="MobileApp Development"/>
+                    </div>
+                    <div className="flex flex-wrap">
+                        <SkillBox skillTitle={"JavaScript"} skillPercent={80}/>
+                        <SkillBox skillTitle={"TypeScript"} skillPercent={90}/>
+                        <SkillBox skillTitle={"React"} skillPercent={60}/>
+                        <SkillBox skillTitle={"C++"} skillPercent={40}/>
+                        <SkillBox skillTitle={"C#"} skillPercent={65}/>
+                        <SkillBox skillTitle={"Java"} skillPercent={30}/>
                     </div>
                 </div>
             </main>
