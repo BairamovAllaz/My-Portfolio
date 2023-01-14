@@ -1,13 +1,11 @@
 import React from "react";
 import { IconType } from "react-icons";
 
-
 interface props{
     icon : IconType;
     title:string;
     info: string;
 }
-
 
 function ContactBox(props:props)
 {
