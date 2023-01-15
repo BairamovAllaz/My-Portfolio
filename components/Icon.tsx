@@ -1,11 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
 
-
 interface props {
     size : number
 }
-
 function Icon({size}: props) {
     return (
         <div>
@@ -13,5 +11,4 @@ function Icon({size}: props) {
         </div>
     )
 }
-
 export default Icon
