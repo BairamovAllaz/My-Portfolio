@@ -1,6 +1,7 @@
 import React from 'react'
 import Head from "next/head";
 import ContactInfo from "../components/ContactInfo";
+import ContactInputs from "../components/ContactInputs";
 
 function Contact() {
     return (
@@ -20,7 +21,9 @@ function Contact() {
                         <div className="w-1/2 h-96 ">
                             <ContactInfo/>
                         </div>
-                        <div className="w-1/2 bg-slate-600 h-96"></div>
+                        <div className="w-1/2 bg-slate-600 h-max">
+                            <ContactInputs/>
+                        </div>
                     </div>
                 </div>
             </main>
