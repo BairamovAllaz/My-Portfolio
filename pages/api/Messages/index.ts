@@ -14,6 +14,16 @@ const handler = async(req : NextApiRequest,res : NextApiResponse) => {
             console.log(err);
             return res.status(500).json({error: err});
         }
+    }else if(req.method === "POST")
+    {
+        try{
+            const {name,email,subject,message} = req.body;
+            console.log("Email : " + email);
+        }catch(err)
+        {
+            console.log(err);
+            return res.status(500).json({error: err});
+        }
     }
 }
 export default mongoDb(handler);
