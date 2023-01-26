@@ -18,7 +18,15 @@ const handler = async(req : NextApiRequest,res : NextApiResponse) => {
     {
         try{
             const {name,email,subject,message} = req.body;
-            console.log("Email : " + email);
+            const query = {name,email,subject,message},
+                update = { expire: new Date() },
+                options = { upsert: true, new: true, setDefaultsOnInsert: true };
+
+            messageCollection.findOneAndUpdate(query,update,options,function(err,result){
+                if(err) res.status(404).send(err.message);
+                console.log("Inserted Done");
+            });
+            return res.status(200).send({email, name, subject, message});
         }catch(err)
         {
             console.log(err);
