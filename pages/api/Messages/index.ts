@@ -1,6 +1,9 @@
 import {NextApiRequest, NextApiResponse} from "next";
 import messageCollection from "../../../src/Models/Messages";
 import mongoDb from "../../../src/helper/mongoDb";
+import emailSender, {IinfoMailer} from "../Services/EmailSender";
+import EmailSender from "../Services/EmailSender";
+import {text} from "stream/consumers";
 const handler = async(req : NextApiRequest,res : NextApiResponse) => {
     if(req.method === 'GET')
     {
@@ -26,6 +29,17 @@ const handler = async(req : NextApiRequest,res : NextApiResponse) => {
                 if(err) res.status(404).send(err.message);
                 console.log("Inserted Done");
             });
+
+            const emailSender : EmailSender  = new EmailSender();
+
+            const infoEmailer : IinfoMailer = {
+                senderEmail : email,
+                subject : subject,
+                text : message
+            }
+            await emailSender.sendEmail(infoEmailer);
+
+
             return res.status(200).send({email, name, subject, message});
         }catch(err)
         {

@@ -1,8 +1,22 @@
 import React from 'react'
+import {bool} from "prop-types";
+import EmailSender, {IinfoMailer} from "../pages/api/Services/EmailSender";
 function ContactInputs()
 {
-    //TODO SEND EMAIL TO MYSELF
-    const submitForm = (event : any) => {
+    const submitForm = async(event : any) => {
+        saveMessageToDatabase(event);
+        const emailSender : EmailSender  = new EmailSender();
+
+        const infoEmailer : IinfoMailer = {
+            senderEmail : event.target.email.value,
+            subject : event.target.subject.value,
+            text : event.target.text.value
+        }
+        await emailSender.sendEmail(infoEmailer);
+    }
+
+    function saveMessageToDatabase(event : any)
+    {
         event.preventDefault();
         const name = event.target.name.value;
         const email = event.target.email.value;
@@ -36,6 +50,7 @@ function ContactInputs()
             .catch(error => console.log("error", error));
     }
 
+
     function isEmpty(name : string,email : string,subject : string,message : string) : boolean {
         if(name === "" || email === "" || subject === "" || message === "")
         {
@@ -55,21 +70,21 @@ function ContactInputs()
                     <div className="p-2">
                         <label htmlFor={"name"} className="text-slate-200 font-bold">Name</label>
                         <input placeholder="Enter your name"
-                               className = "border-2 border-gray-800 w-full h-[50px] mt-6 bg-[#161F32] text-slate-200"
+                               className = "border-2 border-gray-800 w-full h-[50px] mt-6 bg-[#161F32] focus:border-[#72E2AE] text-slate-200"
                                name = "name"
                         />
                     </div>
                     <div className = "p-2">
                         <label htmlFor={"email"} className="text-slate-200 font-bold">Email</label>
                         <input placeholder="Enter your email"
-                               className="border-2 border-gray-800 w-full h-[50px] mt-4 bg-[#161F32] border-[#72E2AE] text-slate-200"
+                               className="border-2 border-gray-800 w-full h-[50px] mt-4 bg-[#161F32] focus:border-[#72E2AE] text-slate-200"
                                name = "email"
                         />
                     </div>
                     <div className="p-2">
                         <label htmlFor={"subject"} className="text-slate-200 font-bold">Subject</label>
                         <input placeholder="Enter Subject"
-                               className="border-2 border-gray-800 w-full h-[50px] mt-4 bg-[#161F32] text-slate-200"
+                               className="border-2 border-gray-800 w-full h-[50px] mt-4 focus:border-[#72E2AE] bg-[#161F32] text-slate-200"
                                name = "subject"
                         />
                     </div>
