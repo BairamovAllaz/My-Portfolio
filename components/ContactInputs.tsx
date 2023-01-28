@@ -1,18 +1,10 @@
 import React from 'react'
 import {bool} from "prop-types";
-import EmailSender, {IinfoMailer} from "../pages/api/Services/EmailSender";
 function ContactInputs()
 {
     const submitForm = async(event : any) => {
         saveMessageToDatabase(event);
-        const emailSender : EmailSender  = new EmailSender();
-
-        const infoEmailer : IinfoMailer = {
-            senderEmail : event.target.email.value,
-            subject : event.target.subject.value,
-            text : event.target.text.value
-        }
-        await emailSender.sendEmail(infoEmailer);
+        clearInputs(event);
     }
 
     function saveMessageToDatabase(event : any)
@@ -58,6 +50,14 @@ function ContactInputs()
             return true;
         }
         return false;
+    }
+
+    function clearInputs(event : any)
+    {
+        event.target.name.value = "";
+        event.target.email.value = "";
+        event.target.subject.value = "";
+        event.target.message.value = "";
     }
 
     return(

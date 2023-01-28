@@ -1,9 +1,7 @@
 import {NextApiRequest, NextApiResponse} from "next";
 import messageCollection from "../../../src/Models/Messages";
 import mongoDb from "../../../src/helper/mongoDb";
-import emailSender, {IinfoMailer} from "../Services/EmailSender";
-import EmailSender from "../Services/EmailSender";
-import {text} from "stream/consumers";
+import nodemailer from "nodemailer";
 const handler = async(req : NextApiRequest,res : NextApiResponse) => {
     if(req.method === 'GET')
     {
@@ -30,16 +28,23 @@ const handler = async(req : NextApiRequest,res : NextApiResponse) => {
                 console.log("Inserted Done");
             });
 
-            const emailSender : EmailSender  = new EmailSender();
+            const transPorter = nodemailer.createTransport({
+                host: process.env.HOST,
+                port: 587,
+                secure: false,
+                auth: {
+                    user: process.env.MY_EMAIL,
+                    pass: process.env.PASSWORD,
+                },
+            });
 
-            const infoEmailer : IinfoMailer = {
-                senderEmail : email,
-                subject : subject,
-                text : message
-            }
-            await emailSender.sendEmail(infoEmailer);
-
-
+            let info = await transPorter.sendMail({
+                from: email, // sender address
+                to: process.env.MY_EMAIL, // list of receivers
+                subject: subject, // Subject line
+                text: message, // plain text body
+                html: "<b></b>", // html body
+            });
             return res.status(200).send({email, name, subject, message});
         }catch(err)
         {
