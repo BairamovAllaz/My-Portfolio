@@ -1,5 +1,4 @@
 import React from 'react'
-import {bool} from "prop-types";
 function ContactInputs()
 {
     const submitForm = async(event : any) => {
