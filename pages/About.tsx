@@ -21,7 +21,7 @@ function About()
             <div className = "md:w-[50%] w-screen md:h-[30%] h-screen mt-36">
                 <div className="text-center text-slate-100 font-bold text-4xl">
                     <h1>ABOUT ME</h1>
-                </div>b
+                </div>
                 <div className = "md:flex mt-12 block">
                     <div className="md:w-[50%] w-full md:h-[30%] h-full">
                         <AboutImage/>

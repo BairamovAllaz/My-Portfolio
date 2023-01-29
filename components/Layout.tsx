@@ -3,6 +3,7 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import type { RootState } from '../store'
 import Navigation from "./Navigation";
+// @ts-ignore
 export default function Layout({ children }) {
     const isNavigationOpen = useSelector((state: RootState) => state.state.isNavigationOpen);
     return (
