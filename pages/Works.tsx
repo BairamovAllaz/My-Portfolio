@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {fetchGithubRepos} from "../slices/apiSlice";
 import {RootState} from "../store";
 import WorksNavigationButtons from "../components/WorksNavigationButtons";
+import ProjectBox from "../components/ProjectBox";
 
 function Works()
 {
@@ -38,6 +39,15 @@ function Works()
                     <div>
                         <div>
                             <WorksNavigationButtons/>
+                        </div>
+                        <div className="w-full h-full flex flex-row">
+                            {
+                                FetchedRepos?.map((work,key) => (
+                                    <div key={key}>
+                                        <ProjectBox/>
+                                    </div>
+                                ))
+                            }
                         </div>
                     </div>
                 </div>
