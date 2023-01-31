@@ -3,20 +3,25 @@ import React from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchGithubRepos} from "../slices/apiSlice";
 import {RootState} from "../store";
+import WorksNavigationButtons from "../components/WorksNavigationButtons";
 
 function Works()
 {
     const FetchedRepos = useSelector((state: RootState) => state.gitApi.repos);
     const dispatch = useDispatch();
 
-    React.useEffect(() => {
+    React.useLayoutEffect(() => {
 
         // @ts-ignore
         dispatch(fetchGithubRepos());
-        console.log(FetchedRepos);
     },[])
 
-
+    if(FetchedRepos == null)
+    {
+        return(
+            <div>Loading...</div>
+        )
+    }
     return(
         <>
             <Head>
@@ -29,6 +34,11 @@ function Works()
                 <div className="mt-36">
                     <div className="text-center text-slate-100 font-bold text-4xl">
                         <h1>Works</h1>
+                    </div>
+                    <div>
+                        <div>
+                            <WorksNavigationButtons/>
+                        </div>
                     </div>
                 </div>
             </main>

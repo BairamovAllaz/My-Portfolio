@@ -1,6 +1,7 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import {IRepo} from "./gitApiTypes";
+import {stat} from "fs";
 
 interface IApiSlice {
     repos: IRepo[] | null
@@ -13,7 +14,8 @@ const initialState : IApiSlice = {
 export const fetchGithubRepos = createAsyncThunk(
     'users/fetchByIdStatus',
     async (thunkAPI) => {
-        const response = await getGithubRepos()
+        const response = await getGithubRepos();
+        console.log("Redux length: " + response?.length)
         return response;
     }
 )
@@ -38,7 +40,9 @@ export const repoSlice = createSlice({
     extraReducers: (builder) => {
         builder.addCase(fetchGithubRepos.fulfilled, (state, action) => {
             // @ts-ignore
-            state?.repos?.push(action.payload)
+            action.payload?.map(pay => {
+                state?.repos?.push(pay);
+            })
         })
     },
 });
