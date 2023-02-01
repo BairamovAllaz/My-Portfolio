@@ -1,10 +1,11 @@
 import exp from "constants";
+import {IRepo} from "../slices/gitApiTypes";
 
-function ProjectBox()
+function ProjectBox(props : IRepo)
 {
     return(
-        <div className = "w-1/3 h-12 bg-slate-200">
-
+        <div className = "w-[25%] h-[300px] bg-slate-200 mt-8">
+            <h1>{props.name}</h1>
         </div>
     )
 }

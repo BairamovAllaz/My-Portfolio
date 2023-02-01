@@ -4,18 +4,19 @@ import {IRepo} from "./gitApiTypes";
 import {stat} from "fs";
 
 interface IApiSlice {
-    repos: IRepo[] | null
+    repos: IRepo[] | null,
+    filteredRepos: IRepo[] | null,
 }
 
 const initialState : IApiSlice = {
-    repos : []
+    repos : [],
+    filteredRepos : []
 };
 
 export const fetchGithubRepos = createAsyncThunk(
     'users/fetchByIdStatus',
     async (thunkAPI) => {
         const response = await getGithubRepos();
-        console.log("Redux length: " + response?.length)
         return response;
     }
 )
@@ -32,21 +33,35 @@ async function getGithubRepos() : Promise<IRepo[] | null>
     }
 }
 
+
 export const repoSlice = createSlice({
     name: "counter",
     initialState,
     reducers: {
+        filterByLanguage: (state, action: PayloadAction<string>) => {
+            if(action.payload != "All")
+            {
+                // @ts-ignore
+                state.filteredRepos = state?.repos?.filter((el) => el.language == action.payload);
+            }else{
+                state.filteredRepos = state.repos;
+            }
+        },
     },
     extraReducers: (builder) => {
         builder.addCase(fetchGithubRepos.fulfilled, (state, action) => {
             // @ts-ignore
-            action.payload?.map(pay => {
-                state?.repos?.push(pay);
-            })
+            if(state?.repos?.length == 0) {
+                action.payload?.map(pay => {
+                    // @ts-ignore
+                    state?.repos?.push(pay);
+                    state?.filteredRepos?.push(pay);
+                })
+            }
         })
     },
 });
 
-export const {  } = repoSlice.actions;
+export const { filterByLanguage } = repoSlice.actions;
 
 export default repoSlice.reducer;

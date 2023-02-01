@@ -5,17 +5,22 @@ import {fetchGithubRepos} from "../slices/apiSlice";
 import {RootState} from "../store";
 import WorksNavigationButtons from "../components/WorksNavigationButtons";
 import ProjectBox from "../components/ProjectBox";
+import {func} from "prop-types";
 
 function Works()
 {
-    const FetchedRepos = useSelector((state: RootState) => state.gitApi.repos);
+    const FetchedRepos = useSelector((state: RootState) => state.gitApi.filteredRepos);
     const dispatch = useDispatch();
+    const [loadCount,setLoadCount] = React.useState<number>(6);
 
-    React.useLayoutEffect(() => {
-
-        // @ts-ignore
-        dispatch(fetchGithubRepos());
+    React.useEffect(() => {
+            // @ts-ignore
+            dispatch(fetchGithubRepos());
     },[])
+
+    function handleLoadMore() {
+        setLoadCount(loadCount + 6);
+    }
 
     if(FetchedRepos == null)
     {
@@ -31,23 +36,29 @@ function Works()
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
-            <main className = "w-screen h-screen flex justify-center">
-                <div className="mt-36">
+            <main className = "w-full flex justify-center p-12">
+                <div className="mt-36 w-full">
                     <div className="text-center text-slate-100 font-bold text-4xl">
                         <h1>Works</h1>
                     </div>
-                    <div>
-                        <div>
+                    <div className = "block">
+                        <div className="flex justify-center">
                             <WorksNavigationButtons/>
                         </div>
-                        <div className="w-full h-full flex flex-row">
+                        <div className="w-full h-full flex space-x-3 justify-center flex-wrap">
                             {
-                                FetchedRepos?.map((work,key) => (
-                                    <div key={key}>
-                                        <ProjectBox/>
-                                    </div>
+                                FetchedRepos?.slice(0,loadCount).map((work,key) => (
+                                        <ProjectBox key = {key} {...work}/>
                                 ))
                             }
+                        </div>
+                        <div className = "flex justify-center">
+                            <button
+                                className="bg-blue-500 mt-6 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                                onClick = {handleLoadMore}
+                            >
+                                Load More...
+                            </button>
                         </div>
                     </div>
                 </div>
