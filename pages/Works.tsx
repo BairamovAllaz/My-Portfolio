@@ -22,6 +22,13 @@ function Works()
         setLoadCount(loadCount + 6);
     }
 
+    function handleShowLess()
+    {
+        if(loadCount > 6) {
+            setLoadCount(6);
+        }
+    }
+
     if(FetchedRepos == null)
     {
         return(
@@ -53,12 +60,25 @@ function Works()
                             }
                         </div>
                         <div className = "flex justify-center">
-                            <button
-                                className="bg-blue-500 mt-6 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                                onClick = {handleLoadMore}
-                            >
-                                Load More...
-                            </button>
+                            {
+                                FetchedRepos.length == loadCount ? (
+                                    <div>
+                                        <button
+                                            className="bg-blue-500 mt-6 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                                            onClick = {handleShowLess}
+                                        >
+                                            Show Less
+                                        </button>
+                                    </div>
+                                ) : (
+                                    <button
+                                        className="bg-blue-500 mt-6 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                                        onClick = {handleLoadMore}
+                                    >
+                                        Load More.
+                                    </button>
+                                )
+                            }
                         </div>
                     </div>
                 </div>
