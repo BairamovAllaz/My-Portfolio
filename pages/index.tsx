@@ -12,7 +12,7 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
             <main>
-                    <div className="h-full grow flex justify-center items-center ml-auto">
+                    <div className="h-screen grow flex justify-center items-center ml-auto">
                             <ProfileBox/>
                     </div>
             </main>

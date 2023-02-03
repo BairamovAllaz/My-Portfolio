@@ -3,10 +3,12 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 
 export interface CounterState {
   isNavigationOpen: boolean;
+  isMobilNavigationMenuOpen : boolean
 }
 
 const initialState: CounterState = {
   isNavigationOpen: false,
+  isMobilNavigationMenuOpen : false
 };
 
 export const stateSlice = createSlice({
@@ -16,10 +18,13 @@ export const stateSlice = createSlice({
     toogleisNavigationOpen: state => {
       state.isNavigationOpen = !state.isNavigationOpen;
     },
+    toogleisMobilNavigationMenuOpen: state => {
+      state.isMobilNavigationMenuOpen = !state.isMobilNavigationMenuOpen;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { toogleisNavigationOpen } = stateSlice.actions;
+export const { toogleisNavigationOpen ,toogleisMobilNavigationMenuOpen} = stateSlice.actions;
 
 export default stateSlice.reducer;

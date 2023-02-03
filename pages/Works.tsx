@@ -52,7 +52,7 @@ function Works()
                         <div className="flex justify-center">
                             <WorksNavigationButtons/>
                         </div>
-                        <div className="w-full h-full flex space-x-3 justify-center flex-wrap">
+                        <div className="w-full h-screen flex space-x-3 justify-center flex-wrap overscroll-y-auto">
                             {
                                 FetchedRepos?.slice(0,loadCount).map((work,key) => (
                                         <ProjectBox key = {key} {...work}/>
