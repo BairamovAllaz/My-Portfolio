@@ -4,6 +4,8 @@ import ContactInfo from "../components/ContactInfo";
 import ContactInputs from "../components/ContactInputs";
 
 function Contact() {
+    // TODO FIX CONTACT PAGE
+    //TODO FIX MOBILE NAVBAR
     return (
         <>
             <Head>
@@ -12,8 +14,8 @@ function Contact() {
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
-            <main className="w-full h-screen flex justify-center">
-                <div className = " w-screen md:h-[30%] h-screen mt-36">
+            <main className="w-full flex justify-center">
+                <div className = "w-screen md:h-[30%] h-screen mt-36">
                     <div className="text-center text-slate-100 font-bold text-4xl">
                         <h1>Contact US</h1>
                     </div>

@@ -35,14 +35,14 @@ function WorksNavigationButtons()
     }
 
     return(
-        <div className="flex space-x-2 mt-12">
+        <div className="flex flex-wrap sm:flex-nowrap space-x-2 mt-12 justify-center">
             {
                 programmingLanguages?.map((repo,key) => {
                     return (
                         <div key={key}>
                             <div>
                                 <button
-                                    className="text-white font-bold py-2 px-4 rounded"
+                                    className="text-white font-bold py-2 px-4 rounded mt-2 sm:mt-0"
                                     style = {{backgroundColor : selected === repo ? '#72E2AE' : '#2D484D'}}
                                     onClick={() => handleSelected(repo)}
                                 >

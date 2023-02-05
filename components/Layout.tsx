@@ -12,14 +12,14 @@ export default function Layout({ children }) {
     return (
             <>
             <div className = "flex">
-                <div className = "w-[5%]">
+                <div className = "w-[5%] sm:block hidden">
                     <Bar/>
                 </div>
                 <div className = "w-[100%] sm:w-[95%]">
                     <main>
                         {
                             isNavigationOpen ? (
-                                <div className="w-full h-full bg-[#0B1223]">
+                                <div className="w-full bg-[#0B1223]">
                                     <MobileNavbar/>
                                     {
                                         isMobileNavigationOpen && (

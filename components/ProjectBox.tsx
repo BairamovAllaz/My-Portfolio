@@ -8,7 +8,7 @@ import {FcOvertime} from 'react-icons/fc'
 
 function ProjectBox(props: IRepo) {
     return (
-        <div className="w-[25%] h-[400px] bg-[#162033] mt-8 flex flex-col items-center">
+        <div className="w-full sm:w-[25%] h-[400px] bg-[#162033] mt-8 flex flex-col items-center">
             <div className="w-[90%] h-[20%]">
                 <Image src="/git2.png" alt="Allaz Bairamov git" width={"600"} height={"600"}/>
             </div>

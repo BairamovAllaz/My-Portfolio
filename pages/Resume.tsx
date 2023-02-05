@@ -13,11 +13,11 @@ function Resume() {
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
             <main className="w-full h-full flex justify-center">
-                <div className="mt-36">
+                <div className="sm:mt-36 mt-20">
                     <div className="text-center text-slate-100 font-bold text-4xl">
                         <h1>MY SKILLS</h1>
                     </div>
-                    <div className = "flex w-auto ">
+                    <div className = "flex flex-wrap justify-center sm:flex w-auto ">
                         <ResumeBox ration={90} percentText={85} title="UI/UX DESIGN"/>
                         <ResumeBox ration={150} percentText={80} title="Backend Development"/>
                         <ResumeBox ration={360} percentText={95} title="FrontEnd Development"/>

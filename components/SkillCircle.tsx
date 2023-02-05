@@ -8,9 +8,6 @@ export interface props {
 
 function SkillCircle(props: props) {
     return (
-        /*
-           refactor styling percentage border
-        **/
         <div className="flex justify-center items-center mt-4">
             <div
                 className="
@@ -19,6 +16,7 @@ function SkillCircle(props: props) {
                     w-[120px]
                     h-[120px]
                     rounded-full
+                    mt-6
                     "
                 style={{background: `linear-gradient(${props.ration}deg, #72E2AE 50%, transparent 50%), linear-gradient(0deg, #72E2AE 50%, lightgray 50%)`}}>
                 <div className="

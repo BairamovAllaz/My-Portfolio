@@ -44,7 +44,7 @@ function Works()
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
             <main className = "w-full flex justify-center p-12">
-                <div className="mt-36 w-full">
+                <div className="mt-12 sm:mt-36 w-full">
                     <div className="text-center text-slate-100 font-bold text-4xl">
                         <h1>Works</h1>
                     </div>
@@ -52,7 +52,7 @@ function Works()
                         <div className="flex justify-center">
                             <WorksNavigationButtons/>
                         </div>
-                        <div className="w-full h-screen flex space-x-3 justify-center flex-wrap overscroll-y-auto">
+                        <div className="w-full sm:flex sm:flex-wrap flex-nowrap sm:space-x-3 justify-center flex-wrap overscroll-y-auto">
                             {
                                 FetchedRepos?.slice(0,loadCount).map((work,key) => (
                                         <ProjectBox key = {key} {...work}/>
