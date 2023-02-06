@@ -2,8 +2,6 @@ import React from 'react'
 import SkillCircle, {props} from "./SkillCircle";
 import SkillBox from "./SkillBox";
 
-
-
 function ResumeBox(props: props)
 {
     return(

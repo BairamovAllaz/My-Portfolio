@@ -4,7 +4,6 @@ import {toogleisMobilNavigationMenuOpen} from "../slices/stateSlice";
 function MobileNavbar()
 {
     const dispatch = useDispatch();
-
     function handleMobilToggle()
     {
         dispatch(toogleisMobilNavigationMenuOpen());

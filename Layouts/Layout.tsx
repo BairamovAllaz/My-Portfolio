@@ -1,10 +1,10 @@
-import Bar from './Bar'
+import Bar from '../components/Bar'
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import type { RootState } from '../store'
-import Navigation from "./Navigation";
-import MobileNavbar from "./MobileNavbar";
-import MobilNavigation from "./MobilNavigation";
+import Navigation from "../components/Navigation";
+import MobileNavbar from "../components/MobileNavbar";
+import MobilNavigation from "../components/MobilNavigation";
 // @ts-ignore
 export default function Layout({ children }) {
     const isNavigationOpen = useSelector((state: RootState) => state.state.isNavigationOpen);
