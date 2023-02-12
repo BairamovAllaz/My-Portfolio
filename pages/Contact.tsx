@@ -19,8 +19,8 @@ function Contact() {
                     <div className="text-center text-slate-100 font-bold text-4xl">
                         <h1>Contact US</h1>
                     </div>
-                    <div className="flex justify-center mt-16 space-x-4">
-                        <div className="w-[40%] h-96 ">
+                    <div className="block sm:flex justify-center mt-16 space-x-4">
+                        <div className="w-[40%] h-96">
                             <ContactInfo/>
                         </div>
                         <div className="w-[40%] bg-slate-600 h-max">

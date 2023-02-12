@@ -90,7 +90,8 @@ function ContactInputs()
                     <div className="w-full p-2">
                         <textarea placeholder="Enter your message"
                                className="border-2 border-gray-800 bg-[#161F32] text-slate-200"
-                                  rows={4} cols={60}
+                                  rows={0} cols={0}
+                                  style = {{width : "100%",height : "100px"}}
                                   name = "message"
                         />
                     </div>

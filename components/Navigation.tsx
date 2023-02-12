@@ -13,7 +13,7 @@ function Navigation() {
     }
 
     return(
-            <div className = "w-full h-full bg-[#0F172A] flex justify-center text-center cursor-pointer">
+            <div className = "w-full h-full md:h-screen md:w-screen bg-[#0F172A] flex justify-center text-center cursor-pointer">
                 <div
                     className = "w-1/6 h-full flex items-center [writing-mode:vertical-lr] justify-center border-[#272F40] border-2 hover:w-2/6 duration-700 text-6xl font-black"
                     onClick = {() => redirect("/")}

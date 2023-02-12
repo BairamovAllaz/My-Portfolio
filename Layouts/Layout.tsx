@@ -22,11 +22,14 @@ export default function Layout({ children }) {
                                 <div className="w-full bg-[#0B1223]">
                                     <MobileNavbar/>
                                     {
-                                        isMobileNavigationOpen && (
+                                        isMobileNavigationOpen ? (
                                             <MobilNavigation/>
+                                        ) : (
+                                            <div>
+                                                {children}
+                                            </div>
                                         )
                                     }
-                                    {children}
                                 </div>
                             ) : (
                                 <div className="h-screen">
