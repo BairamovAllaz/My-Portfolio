@@ -4,8 +4,6 @@ import ContactInfo from "../components/ContactInfo";
 import ContactInputs from "../components/ContactInputs";
 
 function Contact() {
-    // TODO FIX CONTACT PAGE
-    //TODO FIX MOBILE NAVBAR
     return (
         <>
             <Head>
