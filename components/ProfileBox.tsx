@@ -7,7 +7,7 @@ import AutoText from './AutoText';
 
 function ProfileBox() {
   return (
-          <div className = "border-slate-100 flex flex-col justify-center place-items-center h-screen font-bold">
+          <div className = "border-slate-100 flex flex-col justify-center place-items-center h-screen w-screen font-bold">
         <div>
             <Icon size={150}/>
         </div>

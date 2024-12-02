@@ -60,7 +60,7 @@ function ContactInputs()
     }
 
     return(
-        <div className = "bg-[#162033] w-full h-full p-6">
+        <div className= "bg-[#162033] w-96 h-full p-6">
             <div>
                 <form className = "block w-full space-y-4"
                       method="POST"

@@ -48,11 +48,11 @@ function Works()
                     <div className="text-center text-slate-100 font-bold text-4xl">
                         <h1>Works</h1>
                     </div>
-                    <div className = "block">
+                    <div className = "block" >
                         <div className="flex justify-center">
                             <WorksNavigationButtons/>
                         </div>
-                        <div className="w-full sm:flex sm:flex-wrap flex-nowrap sm:space-x-3 justify-center flex-wrap overscroll-y-auto">
+                        <div className="h-full w-full sm:flex sm:flex-wrap flex-nowrap sm:space-x-3 justify-center flex-wrap overscroll-y-auto">
                             {
                                 FetchedRepos?.slice(0,loadCount).map((work,key) => (
                                         <ProjectBox key = {key} {...work}/>

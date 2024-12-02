@@ -10,7 +10,7 @@ function AboutInfo()
                 <ul className="list-disc">
                     <li>First Name: Allaz</li>
                     <li>Last Name: Bairamov</li>
-                    <li>Age: 18 years</li>
+                    <li>Age: 20 years</li>
                     <li>Nationality: Georgian</li>
                     <li>Languages: Azerbaijani, Georgia,English,Russian</li>
                     <li>Address: Georgia Tbilisi</li>

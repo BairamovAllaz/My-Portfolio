@@ -6,14 +6,14 @@ function ContactInfo()
 {
     return(
         <div>
-            <div>
+            <div className="text-center md:text-justify">
                 <h1 className="text-slate-200 text-2xl font-bold">Contact Information</h1>
-                <p className="text-[#808291] pt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. A omnis, iusto harum possimus non praesentium qui facere.</p>
+                <p className="text-[#808291] pt-3">You can contact me anytime</p>
             </div>
-            <div>
-                <ContactBox title="Contact On Phone" info="+79516720209" icon={BsTelephone}/>
-                <ContactBox title="Email" info="ellezbayramov2004@gmail.com" icon={AiOutlineMail}/>
-                <ContactBox title="Address" info="Russia Sain Peterburg" icon={HiLocationMarker}/>
+            <div className="w-96">
+                <ContactBox title="Contact On Phone" info="557584496" icon={BsTelephone}/>
+                <ContactBox title="Email" info="socialbairamovi2004@gmail.com" icon={AiOutlineMail}/>
+                <ContactBox title="Address" info="Tbilisi" icon={HiLocationMarker}/>
             </div>
         </div>
     )

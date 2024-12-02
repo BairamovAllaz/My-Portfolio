@@ -12,7 +12,7 @@ function Resume() {
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
-            <main className="w-full h-full flex justify-center">
+            <main className="w-full h-full md:w-screen md:h-screen flex justify-center">
                 <div className="sm:mt-36 mt-20">
                     <div className="text-center text-slate-100 font-bold text-4xl">
                         <h1>MY SKILLS</h1>

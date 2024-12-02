@@ -4,7 +4,7 @@ function AboutImage()
 {
     return(
         <div>
-            <Image src="/meFake.jpg" alt = "meFake" width="600" height="600"/>
+            <Image src="/mephoto.jpg" alt = "meFake" width="600" height="600"/>
         </div>
     )
 }

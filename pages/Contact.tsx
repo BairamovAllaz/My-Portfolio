@@ -12,21 +12,21 @@ function Contact() {
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
-            <main className="w-full flex justify-center">
-                <div className = "w-screen md:h-[30%] h-screen mt-36">
+            <div className="w-full h-full md:w-screen md:h-screen flex items-center justify-center md:flex-row">
+                <div className = "">
                     <div className="text-center text-slate-100 font-bold text-4xl">
                         <h1>Contact US</h1>
                     </div>
-                    <div className="block sm:flex justify-center mt-16 space-x-4">
-                        <div className="w-[40%] h-96">
+                    <div className="block justify-center  mt-16 space-x-0 md:space-x-8 space-y-40 md:space-y-0">
+                        <div className="h-96">
                             <ContactInfo/>
                         </div>
-                        <div className="w-[40%] bg-slate-600 h-max">
+                        <div className="w-[40%] bg-slate-6 h-max mt-8 md:mt-0">
                             <ContactInputs/>
                         </div>
                     </div>
                 </div>
-            </main>
+            </div>
         </>
     )
 }
