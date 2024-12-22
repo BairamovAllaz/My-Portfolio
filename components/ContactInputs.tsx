@@ -2,54 +2,53 @@ import React from 'react'
 function ContactInputs()
 {
     const submitForm = async(event : any) => {
-        saveMessageToDatabase(event);
-        clearInputs(event);
+        alert("Data sended");
     }
 
-    function saveMessageToDatabase(event : any)
-    {
-        event.preventDefault();
-        const name = event.target.name.value;
-        const email = event.target.email.value;
-        const subject = event.target.subject.value;
-        const message = event.target.message.value;
-        if(isEmpty(name,email,subject,message))
-        {
-            return;
-        }
-        const raw = JSON.stringify({
-            name,
-            email,
-            subject,
-            message,
-        });
-        const myHeaders = new Headers();
+    // function saveMessageToDatabase(event : any)
+    // {
+    //     event.preventDefault();
+    //     const name = event.target.name.value;
+    //     const email = event.target.email.value;
+    //     const subject = event.target.subject.value;
+    //     const message = event.target.message.value;
+    //     if(isEmpty(name,email,subject,message))
+    //     {
+    //         return;
+    //     }
+    //     const raw = JSON.stringify({
+    //         name,
+    //         email,
+    //         subject,
+    //         message,
+    //     });
+    //     const myHeaders = new Headers();
 
-        const requestOptions = {
-            method: "POST",
-            headers: myHeaders,
-            body: raw,
-            redirect: "follow",
-        };
-        myHeaders.append("Content-Type", "application/json");
-        // @ts-ignore
-        fetch("/api/Messages", requestOptions)
-            .then(t => t.json())
-            .then(result => {
-                console.log(result);
-            })
-            .catch(error => console.log("error", error));
-    }
+    //     const requestOptions = {
+    //         method: "POST",
+    //         headers: myHeaders,
+    //         body: raw,
+    //         redirect: "follow",
+    //     };
+    //     myHeaders.append("Content-Type", "application/json");
+    //     // @ts-ignore
+    //     fetch("/api/Messages", requestOptions)
+    //         .then(t => t.json())
+    //         .then(result => {
+    //             console.log(result);
+    //         })
+    //         .catch(error => console.log("error", error));
+    // }
 
 
-    function isEmpty(name : string,email : string,subject : string,message : string) : boolean {
-        if(name === "" || email === "" || subject === "" || message === "")
-        {
-            alert("Please fill all the field");
-            return true;
-        }
-        return false;
-    }
+    // function isEmpty(name : string,email : string,subject : string,message : string) : boolean {
+    //     if(name === "" || email === "" || subject === "" || message === "")
+    //     {
+    //         alert("Please fill all the field");
+    //         return true;
+    //     }
+    //     return false;
+    // }
 
     function clearInputs(event : any)
     {
