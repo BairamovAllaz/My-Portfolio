@@ -5,18 +5,18 @@ import {fetchGithubRepos} from "../slices/apiSlice";
 import {RootState} from "../store";
 import WorksNavigationButtons from "../components/WorksNavigationButtons";
 import ProjectBox from "../components/ProjectBox";
-import {func} from "prop-types";
+import {FaSpinner} from 'react-icons/fa';
+import { AppDispatch } from "../store";
 
 function Works()
 {
     const FetchedRepos = useSelector((state: RootState) => state.gitApi.filteredRepos);
-    const dispatch = useDispatch();
+    const dispatch = useDispatch<AppDispatch>();
     const [loadCount,setLoadCount] = React.useState<number>(6);
 
     React.useEffect(() => {
-            // @ts-ignore
-            dispatch(fetchGithubRepos());
-    },[])
+        dispatch(fetchGithubRepos());
+    },[dispatch]);
 
     function handleLoadMore() {
         setLoadCount(loadCount + 6);
@@ -32,8 +32,12 @@ function Works()
     if(FetchedRepos == null)
     {
         return(
-            <div>Loading...</div>
-        )
+            <div className="flex items-center justify-center min-h-screen">
+                <div className="animate-spin">
+                    <FaSpinner className="w-12 h-12 text-blue-500" />
+                </div>
+            </div>
+        );
     }
     return(
         <>

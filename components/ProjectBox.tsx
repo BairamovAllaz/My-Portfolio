@@ -9,7 +9,7 @@ import {FaGithub} from 'react-icons/fa'
 
 function ProjectBox(props: IRepo) {
     return (
-        <div className="w-full sm:w-[25%] lg:min-w-[300px] bg-[#162033] mt-8 flex flex-col items-center">
+        <div className="w-full sm:w-[25%] lg:min-w-[300px] bg-[#162033] mt-8 flex flex-col items-center sm:min-w-[300px]">
             <div className="w-[90%] relative overflow-hidden rounded-lg">
                 <Image 
                     src="/git2.png" 

@@ -7,8 +7,8 @@ import MobileNavbar from "../components/MobileNavbar";
 import MobilNavigation from "../components/MobilNavigation";
 // @ts-ignore
 export default function Layout({ children }) {
-    const isNavigationOpen = useSelector((state: RootState) => state.state.isNavigationOpen);
-    const isMobileNavigationOpen = useSelector((state: RootState) => state.state.isMobilNavigationMenuOpen);
+    const isNavigationOpen = useSelector((state: RootState) => state.zstate.isNavigationOpen);
+    const isMobileNavigationOpen = useSelector((state: RootState) => state.zstate.isMobilNavigationMenuOpen);
     return (
             <>
             <div className="flex h-screen bg-[#0B1223]">

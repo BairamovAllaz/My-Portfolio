@@ -50,13 +50,11 @@ export const repoSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder.addCase(fetchGithubRepos.fulfilled, (state, action) => {
-            // @ts-ignore
-            if(state?.repos?.length == 0) {
-                action.payload?.map(pay => {
-                    // @ts-ignore
-                    state?.repos?.push(pay);
-                    state?.filteredRepos?.push(pay);
-                })
+            if(state?.repos?.length === 0 && action.payload) {
+                action.payload.map((repo: IRepo) => {
+                    state.repos?.push(repo);
+                    state.filteredRepos?.push(repo);
+                });
             }
         })
     },

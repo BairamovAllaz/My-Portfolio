@@ -1,13 +1,19 @@
 import { configureStore } from '@reduxjs/toolkit'
 import stateSlice from './slices/stateSlice'
-import apiSlice from "./slices/apiSlice";
+import { repoSlice } from "./slices/apiSlice";
 
 export const store = configureStore({
   reducer: {
-    state : stateSlice,
-    gitApi : apiSlice,
+    zstate : stateSlice,
+    gitApi : repoSlice.reducer,
   },
 })
 
-export type RootState = ReturnType<typeof store.getState>
+export type RootState = {
+  zstate: {
+    isNavigationOpen: boolean;
+    isMobilNavigationMenuOpen: boolean;
+  };
+  gitApi: ReturnType<typeof repoSlice.reducer>;
+}
 export type AppDispatch = typeof store.dispatch

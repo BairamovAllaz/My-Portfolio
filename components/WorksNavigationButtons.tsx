@@ -2,6 +2,7 @@ import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../store";
 import {filterByLanguage} from "../slices/apiSlice";
+import {IRepo} from "../slices/gitApiTypes";
 function WorksNavigationButtons()
 {
     const repos = useSelector((state: RootState) => state.gitApi.repos);
@@ -11,10 +12,10 @@ function WorksNavigationButtons()
 
     React.useEffect(() => {
             let result : string[] = []
-            repos?.map(element => {
-                if( element != null && !result.includes(element.language))
+            repos?.map((repo: IRepo) => {
+                if(repo != null && !result.includes(repo.language))
                 {
-                    result.push(element.language);
+                    result.push(repo.language);
                 }
             })
             result[0] = "All"

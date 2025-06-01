@@ -7,7 +7,7 @@ export interface CounterState {
 }
 
 const initialState: CounterState = {
-  isNavigationOpen: false,
+  isNavigationOpen: true,
   isMobilNavigationMenuOpen : false
 };
 

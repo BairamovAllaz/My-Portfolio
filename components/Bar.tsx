@@ -8,7 +8,7 @@ import { toogleisNavigationOpen } from '../slices/stateSlice'
 import type { RootState } from '../store'
 
 function Bar() {
-    const isNavigationOpen = useSelector((state: RootState) => state.state.isNavigationOpen);
+    const isNavigationOpen = useSelector((state: RootState) => state.zstate.isNavigationOpen);
     const dispatch = useDispatch();
 
     return (

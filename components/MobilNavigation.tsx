@@ -13,8 +13,8 @@ function MobilNavigation()
         router.push(path);
     }
     return (
-        <div className = "block sm:hidden w-screen h-screen bg-[#0B1223]">
-            <div className="flex flex-col justify-center items-center mt-[200px]">
+        <div className="block sm:hidden w-screen min-h-[500px] bg-[#0B1223] p-4 overflow-hidden">
+            <div className="flex flex-col items-center mt-4 gap-4">
                 <p className="text-slate-200 font-bold text-2xl p-5"
                     onClick = {() => Navigate("/")}>
                     <span className = "text-[#72E2AE]">0.1.</span> HOME
