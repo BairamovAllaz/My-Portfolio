@@ -52,20 +52,20 @@ function Works()
                         <div className="flex justify-center">
                             <WorksNavigationButtons/>
                         </div>
-                        <div className="h-full w-full sm:flex sm:flex-wrap flex-nowrap sm:space-x-3 justify-center flex-wrap overscroll-y-auto">
+                        <div className="w-full h-full flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8 p-4 sm:p-6 md:p-8 ">
                             {
                                 FetchedRepos?.slice(0,loadCount).map((work,key) => (
                                         <ProjectBox key = {key} {...work}/>
                                 ))
                             }
                         </div>
-                        <div className = "flex justify-center">
+                        <div className = "flex  flex-wrap  justify-center">
                             {
-                                FetchedRepos.length == loadCount ? (
+                                loadCount > 6 ? (
                                     <div>
                                         <button
                                             className="bg-blue-500 mt-6 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                                            onClick = {handleShowLess}
+                                            onClick={handleShowLess}
                                         >
                                             Show Less
                                         </button>
@@ -73,9 +73,9 @@ function Works()
                                 ) : (
                                     <button
                                         className="bg-blue-500 mt-6 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                                        onClick = {handleLoadMore}
+                                        onClick={handleLoadMore}
                                     >
-                                        Load More.
+                                        Load More
                                     </button>
                                 )
                             }

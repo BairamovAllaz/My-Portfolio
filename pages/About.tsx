@@ -30,7 +30,7 @@ function About()
                         <AboutInfo/>
                     </div>
                 </div>
-                <div className="mt-0 sm:mt-20 bg-[#0B1223]">
+                <div className="mt-0 sm:mt-20 bg-[#0B1223] pb-10">
                     <div className="flex justify-center text-center text-slate-100 font-bold text-4xl">
                         <h1>
                             MY SERVICES

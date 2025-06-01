@@ -5,38 +5,64 @@ import {SiNamecheap} from 'react-icons/si'
 // @ts-ignore
 import {MdDescription} from 'react-icons/md'
 import {FcOvertime} from 'react-icons/fc'
+import {FaGithub} from 'react-icons/fa'
 
 function ProjectBox(props: IRepo) {
     return (
-        <div className="w-full sm:w-[25%] h-[400px] bg-[#162033] mt-8 flex flex-col items-center">
-            <div className="w-[90%] h-[20%]">
-                <Image src="/git2.png" alt="Allaz Bairamov git" width={"600"} height={"600"}/>
+        <div className="w-full sm:w-[25%] lg:min-w-[300px] bg-[#162033] mt-8 flex flex-col items-center">
+            <div className="w-[90%] relative overflow-hidden rounded-lg">
+                <Image 
+                    src="/git2.png" 
+                    alt="Allaz Bairamov git" 
+                    width={400} 
+                    height={300}
+                    className="object-contain transition-transform duration-300 hover:scale-110 pt-2"
+                />
             </div>
-            <div className="w-[90%] h-[80%] mt-[150px]">
-                <p className="flex text-xl p-2">
-                    <span className="text-slate-200"><SiNamecheap/></span>
-                    <span className="text-gray-300">{props.name}</span>
-                </p>
+            <div className="w-[90%] h-[80%] pt-8 pb-8">
+                <div className="flex items-center mb-4 p-2">
+                    <span className="text-slate-200 mr-3 flex-shrink-0">
+                        <SiNamecheap className="w-5 h-5"/>
+                    </span>
+                    <span className="text-gray-300 text-xl font-medium">{props.name}</span>
+                </div>
                 {
-                    props.language != undefined && (
-                        <p className="flex text-xl p-2">
-                            <span className="text-slate-200">
-                                <MdDescription/>
+                        <p className="flex items-center text-lg p-2">
+                            <span className="text-slate-200 mr-3 flex-shrink-0">
+                                <MdDescription className="w-5 h-5"/>
                             </span>
                             <span className="text-gray-300">
-                                {props.language}
+                                {props.language || 'No Language'}
                             </span>
                         </p>
-                    )
                 }
-                <p className="flex text-xl p-2">
-                    <span className="text-slate-200">
-                        <FcOvertime/>
+                <div className="flex items-center p-2 mt-4">
+                    <span className="text-slate-200 mr-2">
+                        <FcOvertime className="w-5 h-5"/>
                     </span>
                     <span className="text-gray-300">
-                        {new Date(props.created_at).toUTCString()}
+                        {new Date(props.created_at).toLocaleDateString('en-US', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric',
+                            hour: 'numeric',
+                            minute: 'numeric'
+                        })}
                     </span>
-                </p>
+                </div>
+                <div className="mt-4 p-3">
+                    <a 
+                        href={props.html_url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-blue-500 hover:text-blue-700 flex items-center"
+                    >
+                        <span className="text-slate-200 mr-2">
+                            <FaGithub className="w-5 h-5"/>
+                        </span>
+                        <span>View on GitHub</span>
+                    </a>
+                </div>
             </div>
         </div>
     )

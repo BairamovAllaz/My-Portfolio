@@ -7,13 +7,16 @@ interface props{
 function SkillBox(props:props)
 {
     return(
-        <div className="w-[90%] sm:min-w-[48%] h-24 mt-8 ml-4 ">
-            <div className="pt-8 pb-4 text-slate-200 text-xl font-bold">
-                <h1>{props.skillTitle} - <span className="text-[#72E2AE]">({props.skillPercent}%)</span></h1>
+        <div className="w-full sm:w-[48%] h-24 mt-8 ml-4 p-4 bg-[#0B1223] rounded-lg">
+            <div className="text-slate-200 text-lg font-bold">
+                <div className="flex justify-between items-center">
+                    <span>{props.skillTitle}</span>
+                    <span className="text-[#72E2AE]">{props.skillPercent}%</span>
+                </div>
             </div>
-            <div>
-                <div className="w-full h-[20px] bg-[#233F45] rounded-full">
-                    <div className="h-[20px] bg-[#72E2AE] rounded-lg" style={{width:`${props.skillPercent}%`}}/>
+            <div className="mt-2">
+                <div className="w-full h-2 bg-[#233F45] rounded-full">
+                    <div className="h-2 bg-[#72E2AE] rounded-lg" style={{width:`${props.skillPercent}%`}}/>
                 </div>
             </div>
         </div>

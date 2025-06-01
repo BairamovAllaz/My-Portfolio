@@ -11,8 +11,8 @@ export default function Layout({ children }) {
     const isMobileNavigationOpen = useSelector((state: RootState) => state.state.isMobilNavigationMenuOpen);
     return (
             <>
-            <div className = "flex">
-                <div className = "w-[5%] sm:block hidden">
+            <div className="flex h-screen bg-[#0B1223]">
+                <div className="w-[5%] sm:block hidden">
                     <Bar/>
                 </div>
                 <div className = "w-[100%] sm:w-[95%]">
@@ -32,7 +32,7 @@ export default function Layout({ children }) {
                                     }
                                 </div>
                             ) : (
-                                <div className="h-screen">
+                                <div className="h-screen bg-[#0B1223]">
                                     <Navigation/>
                                 </div>
                             )

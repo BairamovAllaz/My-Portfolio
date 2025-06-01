@@ -18,7 +18,9 @@ function SkillCircle(props: props) {
                     rounded-full
                     mt-6
                     "
-                style={{background: `linear-gradient(${props.ration}deg, #72E2AE 50%, transparent 50%), linear-gradient(0deg, #72E2AE 50%, lightgray 50%)`}}>
+                style={{
+                    background: `conic-gradient(#72E2AE ${props.percentText * 3.6}deg, #162033 ${props.percentText * 3.6}deg)`
+                }}>
                 <div className="
                 relative
                 top-[10px]
@@ -36,7 +38,7 @@ function SkillCircle(props: props) {
                 text-2xl
                 ">
                     <div>
-                        %{props.percentText}
+                        {props.percentText}%
                     </div>
                 </div>
                 <div className="m-6 text-slate-200 font-bold pt-5 text-center">

@@ -12,7 +12,7 @@ function Resume() {
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
-            <main className="w-full h-full md:w-screen md:h-screen flex justify-center">
+            <main className="w-full h-full md:w-screen md:h-screen flex justify-center bg-[#0B1223] pb-16">
                 <div className="sm:mt-36 mt-20">
                     <div className="text-center text-slate-100 font-bold text-4xl">
                         <h1>MY SKILLS</h1>
@@ -23,7 +23,7 @@ function Resume() {
                         <ResumeBox ration={360} percentText={95} title="FrontEnd Development"/>
                         <ResumeBox ration={150} percentText={75} title="MobileApp Development"/>
                     </div>
-                    <div className="flex flex-wrap mb-14">
+                    <div className="flex flex-wrap mb-8 bg-[#0B1223]">
                         <SkillBox skillTitle={"JavaScript"} skillPercent={80}/>
                         <SkillBox skillTitle={"TypeScript"} skillPercent={90}/>
                         <SkillBox skillTitle={"React"} skillPercent={60}/>
